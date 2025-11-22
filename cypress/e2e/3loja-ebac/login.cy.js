@@ -46,4 +46,13 @@ it('Deve fazer login com sucesso usando dados de arquivo de fixture', () => {
         })
 
 })
+ 
+it.only ('Deve fazer login com sucesso - Usando comandos customizados', () => {
+        cy.login ('contatoalinevieiradentista@gmail.com', 'teste@123')
+        cy.get('.page-title').should('contain', 'Minha conta')
+});
+
+
+
+
 })

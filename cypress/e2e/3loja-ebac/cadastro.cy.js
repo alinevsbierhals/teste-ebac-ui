@@ -37,4 +37,10 @@ describe('Funcionalidade: cadastro', () => {
             cy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso.')
 
     })
+
+    it.only('Deve completar cadastro com sucesso - Usando comando customizado', () => {
+        cy.preCadastro(faker.internet.email(), 'senha123', faker.name.firstName(), faker.name.lastName())
+        cy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso.')
+    
+    });
 })
